@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import Firebase
+import GoogleSignIn
 
 class ViewController: UIViewController {
 
@@ -32,14 +34,15 @@ class ViewController: UIViewController {
         logoutBTN.isHidden = true
         logoutBTN.addTarget(self, action: #selector(logoutFunction), for: UIControl.Event.touchUpInside)
         view.addSubview(logoutBTN)
+        
+       
     }
 
     @objc func logoutFunction() {
         print("loggedOut")
         self.logoutBTN.isHidden = true
         self.viewContainer.isHidden = false
-        
-        
+         
     }
     
     @IBAction func submitBTN(_ sender: Any) {
@@ -107,6 +110,8 @@ class ViewController: UIViewController {
         alertController.addAction(cancelAction)
         present(alertController, animated: true, completion: nil)
     }
+     
+
     
 }
 

@@ -7,6 +7,7 @@ target 'FirebaseUserTest' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'GoogleSignIn'
 
   # Pods for FirebaseUserTest
 
