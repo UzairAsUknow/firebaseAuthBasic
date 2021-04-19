@@ -65,6 +65,9 @@ class ViewController: UIViewController {
                 self?.logoutBTN.isHidden = false
                 self?.emailTF.resignFirstResponder()
                 self?.passwordTF.resignFirstResponder()
+                
+                 
+                
             }
             
             
@@ -82,13 +85,14 @@ class ViewController: UIViewController {
           
     }
     
+     
     
     func showCreateAccount(email : String, password : String) {
          
         let alertController = UIAlertController(title: "Sign Up", message: "Oh no! Account doesn't exist. Create an account with the same email and Password?", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (_) in
             
-            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] result, error in
+             Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] result, error in
                 
                 guard let strongSelf = self else {
                     return
@@ -101,6 +105,17 @@ class ViewController: UIViewController {
                 
                 self?.viewContainer.isHidden = true
                 self?.logoutBTN.isHidden = false
+                
+                let currentUser = Auth.auth().currentUser
+                currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                  if let error = error {
+                    // Handle error
+                    return;
+                  }
+                    print("Token from Email", idToken!)
+                  // Send token to your backend via HTTPS
+                  // ...
+                }
                 
             }
         )}

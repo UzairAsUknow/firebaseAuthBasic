@@ -3,4 +3,70 @@
    uuid = "87C9410F-BC56-4B6D-88D8-7FC4F470372F"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8BF4DBE3-6917-4CDE-8835-515A7CBB94DC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseUserTest/SignInSelectionVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "unknown"
+            landmarkType = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "65FBB228-9B62-47AB-9F7E-8261B70F5FBA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FirebaseUserTest/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "showCreateAccount(email:password:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "65FBB228-9B62-47AB-9F7E-8261B70F5FBA - e92bcb9d0b91d2d2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.UIAlertAction) -&gt; () in FirebaseUserTest.ViewController.showCreateAccount(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "FirebaseUserTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uzair/Downloads/Xcode%20Projects/FirebaseUserTest/FirebaseUserTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "50">
+               </Location>
+               <Location
+                  uuid = "65FBB228-9B62-47AB-9F7E-8261B70F5FBA - 9edd39dd2f6ec9f5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in closure #1 (__C.UIAlertAction) -&gt; () in FirebaseUserTest.ViewController.showCreateAccount(email: Swift.String, password: Swift.String) -&gt; ()"
+                  moduleName = "FirebaseUserTest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/uzair/Downloads/Xcode%20Projects/FirebaseUserTest/FirebaseUserTest/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "187">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

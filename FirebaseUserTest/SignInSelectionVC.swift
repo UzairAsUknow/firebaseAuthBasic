@@ -5,7 +5,7 @@
 //  Created by Uzair Ahmed on 16/04/21.
 //  Copyright © 2021 Uzair Ahmed. All rights reserved.
 //
-
+import Foundation
 import UIKit
 import Firebase
 import FirebaseAuth
@@ -26,7 +26,7 @@ class SignInSelectionVC: UIViewController, GIDSignInDelegate {
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance()?.presentingViewController = self
         
-        GIDSignIn.sharedInstance()?.restorePreviousSignIn()
+       // GIDSignIn.sharedInstance()?.restorePreviousSignIn()
         
         if(GIDSignIn.sharedInstance()?.currentUser != nil) {
             print("User is logged In")
@@ -55,9 +55,57 @@ extension SignInSelectionVC {
         
         self.gmailName.text = name
         self.gEmail.text = email
+ 
+//        guard let authentication = user.authentication else {
+//            //error handling
+//            return
+//        }
+//
+//        let currentUser = Auth.auth().currentUser
+//        currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+//          if let error = error {
+//            // Handle error
+//            return;
+//          }
+//            print("Token", idToken!)
+//          // Send token to your backend via HTTPS
+//          // ...
+//        }
+
         
-       // let vc = UIViewController()
-        //vc.modalPresentationStyle = .fullScreen
-       // self.present(vc, animation : true)
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
+        
+        
+        
+        Auth.auth().signIn(with: credential) { (authResult, error) in
+            if let error = error {
+                print("authentication error \(error.localizedDescription)")
+            }
+            
+                    let currentUser = Auth.auth().currentUser
+                    currentUser?.getIDTokenForcingRefresh(true) { idToken, error in
+                      if let error = error {
+                        // Handle error
+                        return;
+                      }
+                        print("Token", idToken!)
+                      // Send token to your backend via HTTPS
+                      // ...
+                    }
+            
+        }
+        
+        
+        
+        
+        
+       
+        
     }
+    
+  
+    
+    
 }
